@@ -28,8 +28,8 @@ public class ParkingLotClient {
 
         while (true) {
             System.out.println("\n--- Parking Lot System ---");
-            System.out.println("1. Park model.Vehicle");
-            System.out.println("2. Remove model.Vehicle");
+            System.out.println("1. Park Vehicle");
+            System.out.println("2. Remove Vehicle");
             System.out.println("3. Show Available Spots");
             System.out.println("4. Exit");
             System.out.print("Select an option: ");
@@ -37,27 +37,27 @@ public class ParkingLotClient {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter model.Vehicle Number: ");
+                    System.out.print("Enter Vehicle Number: ");
                     String number = scanner.nextLine();
-                    System.out.print("Enter model.Vehicle Type (CAR, BIKE, TRUCK): ");
+                    System.out.print("Enter Vehicle Type (CAR, BIKE, TRUCK): ");
                     VehicleType type = VehicleType.valueOf(scanner.nextLine().toUpperCase());
                     Vehicle vehicle = new Vehicle(number, type);
                     Ticket ticket = entryGate1.processVehicleEntry(vehicle);
                     if (ticket != null) {
-                        System.out.println("model.Vehicle Parked. model.Ticket ID: " + ticket.getTicketId());
+                        System.out.println("Vehicle Parked. Ticket ID: " + ticket.getTicketId());
                         System.out.println("Spot ID: " + ticket.getSpot().getId());
                     } else {
                         System.out.println("No spot available for your vehicle.");
                     }
                     break;
                 case 2:
-                    System.out.print("Enter model.Ticket ID: ");
+                    System.out.print("Enter Ticket ID: ");
                     String ticketId = scanner.nextLine();
                     boolean success = exitGate1.processVehicleExit(ticketId);
                     if (success) {
-                        System.out.println("model.Vehicle exited. Thank you!");
+                        System.out.println("Vehicle exited. Thank you!");
                     } else {
-                        System.out.println("Invalid model.Ticket ID or spot not found.");
+                        System.out.println("Invalid Ticket ID or spot not found.");
                     }
                     break;
                 case 3:
