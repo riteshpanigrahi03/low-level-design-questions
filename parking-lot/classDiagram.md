@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
 
 %% ===== Enums & Models =====
@@ -125,3 +126,4 @@ ParkingLot --> ParkingFloor
 ParkingLot --> Ticket
 EntryGate --> ParkingLot
 ExitGate --> ParkingLot
+```
