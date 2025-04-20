@@ -31,8 +31,3 @@ public class Ticket {
         return ticketId;
     }
 }
-
-//TODO : price calculation
-// observer pattern
-// client code
-// strategy pattern for price

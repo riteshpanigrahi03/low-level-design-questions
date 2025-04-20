@@ -101,15 +101,15 @@ ParkingLot --> DisplayBoard : notifies
 %% ===== Strategy Pattern =====
 class PricingStrategy {
 <<interface>>
-+calculatePrice(ticket): double
++calculatePrice(type: VehicleType, durationInHours: long): double
 }
 
 class DefaultPricingStrategy {
-+calculatePrice(ticket): double
++calculatePrice(type: VehicleType, durationInHours: long): double
 }
 
 class WeekendPricingStrategy {
-+calculatePrice(ticket): double
++calculatePrice(type: VehicleType, durationInHours: long): double
 }
 
 WeekendPricingStrategy ..|> PricingStrategy
